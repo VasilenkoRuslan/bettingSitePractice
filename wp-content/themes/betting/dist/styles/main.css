@@ -32159,6 +32159,26 @@ a.thumbnail image {
           animation-delay: 700ms !important;
 }
 
+/* line 2, assets/styles/common/_global.scss */
+
+body {
+  max-width: 1600px;
+  margin: 0 auto;
+  background-color: #c4c4c4;
+}
+
+/* line 1, assets/styles/layouts/_header.scss */
+
+.header {
+  max-width: 1440px;
+  min-height: 64px;
+  margin: 0 auto;
+  position: relative;
+  top: 0;
+  left: auto;
+  z-index: 15;
+}
+
 /* line 2, assets/styles/layouts/_header.scss */
 
 .header__row {
@@ -32212,6 +32232,107 @@ a.thumbnail image {
     padding-right: 0.9375rem;
     padding-left: 0.9375rem;
   }
+}
+
+/* line 22, assets/styles/layouts/_header.scss */
+
+.header .header__row {
+  max-width: 100%;
+  margin: 0 auto;
+  padding-left: 11.8%;
+  padding-right: 11.7%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+/* line 30, assets/styles/layouts/_header.scss */
+
+.header .header__row a {
+  color: #fff;
+}
+
+/* line 34, assets/styles/layouts/_header.scss */
+
+.header .header__row nav.header__nav {
+  max-width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+}
+
+/* line 38, assets/styles/layouts/_header.scss */
+
+.header .header__row nav.header__nav ul.nav-primary__menu {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+/* line 41, assets/styles/layouts/_header.scss */
+
+.header .header__row nav.header__nav ul.nav-primary__menu li.menu-item a {
+  color: #fff;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
+  padding: 4px 15px;
+  letter-spacing: -0.3px;
+}
+
+/* line 57, assets/styles/layouts/_header.scss */
+
+.menu-image.menu-image-title-after {
+  padding: 0 !important;
+}
+
+/* line 1, assets/styles/layouts/_home_page.scss */
+
+#headerwrap {
+  position: relative;
+  top: -70px;
+  width: 100%;
+  min-height: 600px;
+  background-position: top center;
+  z-index: 10;
+}
+
+/* line 9, assets/styles/layouts/_home_page.scss */
+
+#headerwrap h1 {
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 68px;
+  letter-spacing: -0.01em;
+  line-height: 70px;
+  color: #fff;
+  padding: 106.75px 0;
+}
+
+/* line 19, assets/styles/layouts/_home_page.scss */
+
+#headerwrap h1 span {
+  color: #17c37b;
+}
+
+/* line 24, assets/styles/layouts/_home_page.scss */
+
+#headerwrap p {
+  color: #fff;
+  padding: 133.9px 0;
+  font-size: 18px;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 28px;
+  letter-spacing: -0.01em;
 }
 
 /**

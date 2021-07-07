@@ -11,6 +11,8 @@
  */
 defined( 'THEME_TD' ) ? THEME_TD : define( 'THEME_TD', 'betting' );
 
+define('THEME_DIR', get_template_directory());
+define('THEME_DIR_URI', get_template_directory_uri());
 // Load modules
 $theme_includes = [
 	'/lib/helpers.php',
@@ -104,3 +106,30 @@ add_filter( 'rest_authentication_errors', 'rest_authentication_require' );
 
 // Disable the theme / plugin text editor in Admin
 define( 'DISALLOW_FILE_EDIT', true );
+
+// add class to function wp_nav_menu()
+function add_additional_class_on_li($classes, $item, $args) {
+	if(isset($args->add_li_class)) {
+		$classes[] = $args->add_li_class;
+	}
+	return $classes;
+}
+add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
+
+function my_acf_op_init() {
+
+	// Check function exists.
+	if( function_exists('acf_add_options_page') ) {
+
+		// Register options page.
+		$option_page = acf_add_options_page(array(
+			'page_title'    => __('Theme General Settings'),
+			'menu_title'    => __('Theme Settings'),
+			'menu_slug'     => 'theme-general-settings',
+			'capability'    => 'edit_posts',
+			'redirect'      => false
+		));
+	}
+}
+
+add_action('acf/init', 'my_acf_op_init');

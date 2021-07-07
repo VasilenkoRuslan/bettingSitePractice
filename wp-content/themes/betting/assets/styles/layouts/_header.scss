@@ -10,4 +10,50 @@
   &__nav {
     @include flex-grid-column(9);
   }
+
+  max-width: 1440px;
+  min-height: 64px;
+  margin: 0 auto;
+  position: relative;
+  top: 0;
+  left: auto;
+  z-index: 15;
+
+  .header__row {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 11.8%;
+    padding-right: 11.7%;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      color: #fff;
+    }
+
+    nav.header__nav {
+      max-width: 100%;
+      flex: auto;
+
+      ul.nav-primary__menu {
+        justify-content: flex-end;
+
+        li.menu-item a {
+          color: #fff;
+          font-family: Roboto, serif;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 19px;
+          text-transform: uppercase;
+          padding: 4px 15px;
+          letter-spacing: -0.3px;
+        }
+      }
+    }
+  }
+}
+
+.menu-image.menu-image-title-after {
+  padding: 0 !important;
 }
