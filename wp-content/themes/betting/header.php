@@ -22,7 +22,7 @@ $link_bg_img = (!empty($link_bg_img)) ? $link_bg_img : null;
 </head>
 
 <body <?php body_class();
-if (is_home() && $link_bg_img !== null) { ?> style="background-image: url('<?php echo $link_bg_img; ?>'); background-repeat: no-repeat; background-position: top center;"<?php } ?>>
+if (is_front_page() && $link_bg_img !== null) { ?> style="background-image: url('<?php echo $link_bg_img; ?>');"<?php } ?>>
 <?php wp_body_open(); ?>
 <header class="header">
 	<div class="header__row">
