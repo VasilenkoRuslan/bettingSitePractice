@@ -3,7 +3,7 @@
 include_once THEME_DIR . '/inc/classes/ThemeHome.class.php';
 $home_page = new ThemeHome();
 ?>
-<?= $home_page->get_header_board(); ?>
+<?php echo $home_page->get_header_board(); ?>
 
 <?php get_template_part( 'template-parts/content-archive', 'betpage' ); ?>
 

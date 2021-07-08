@@ -27,16 +27,16 @@
 		<div class="col-6 justify-content-end before-bet-right">
 			<div class="sortby">
 				<a href="#"><img src="<?php echo $url_img_sort ?>" class="img-before-bet-r" alt="sort"></a>
-					<p class="before-bet-r-text"><?php _e('sort by:', 'betting'); ?></p>
+				<p class="before-bet-r-text"><?php _e('sort by:', 'betting'); ?></p>
 			</div>
-			<div class="date">
-				<a href=""><img src="<?php echo $url_img_time ?>" class="img-before-bet-r" alt="date"></a>
-					<p class="before-bet-r-text"><?php _e('date', 'betting'); ?></p>
-			</div>
-			<div class="rating">
-				<a href="#"><img src="<?php echo $url_img_rating ?>" class="img-before-bet-r" alt="rating"></a>
-					<p class="before-bet-r-text"><?php _e('rating', 'betting'); ?></p>
-			</div>
+			<a href="#" class="date">
+				<img src="<?php echo $url_img_time ?>" class="img-before-bet-r" alt="date">
+				<p class="before-bet-r-text"><?php _e('date', 'betting'); ?></p>
+			</a>
+			<a href="#" class="rating">
+				<img src="<?php echo $url_img_rating ?>" class="img-before-bet-r" alt="rating">
+				<p class="before-bet-r-text"><?php _e('rating', 'betting'); ?></p>
+			</a>
 		</div>
 	</div>
 	<?php
@@ -61,7 +61,7 @@
 			$html_label = "";
 			if ($label !== NULL) {
 				$color_label = $data_card['label']['color_label'];
-				$html_label =<<<HTML
+				$html_label = <<<HTML
 					<div class="bet-badge">
 						<h5>
 							<span class="top-casino" style="border-radius: 1px; background-color:{$color_label}; ">{$label}</span>
@@ -108,7 +108,7 @@ HTML;
 
 			// display rating
 			$avg_rating = intval($data_card['block_1']['bet_rating']);
-			$avg_rating = (!empty($data_card['block_4']['0'])) ? $avg_rating : 0 ;
+			$avg_rating = (!empty($data_card['block_4']['0'])) ? $avg_rating : 0;
 
 			if ($avg_rating >= 0) {
 				$html_rating = $html_rating_1 = null;
@@ -131,7 +131,7 @@ HTML;
 			$url_img_galochka = (!empty($data_card['block_4']['0'])) ? $url_img_galochka : $url_img_galochka_no_license;
 			$html_achievements = '';
 			foreach ($data_card['block_2'] as $k => $achievements_item) {
-				$html_achievements .= '<div><p class="card-text" style="'.$color_no_license.'"><img src="' . $url_img_galochka . '" alt="img">' . $achievements_item . '</p></div>';
+				$html_achievements .= '<div><p class="card-text" style="' . $color_no_license . '"><img src="' . $url_img_galochka . '" alt="img">' . $achievements_item . '</p></div>';
 			}
 
 			//get data Block 3
@@ -142,34 +142,45 @@ HTML;
 				$count_out_block_methods = ($count_methods > 6) ? '+' . ($count_methods - 6) : '';
 
 				foreach ($data_metodos_de_pagamento as $k => $pay_item) {
-					$html_icons_pay .= '<img src="' . $pay_item['icon'] . '" alt="' . $k . '">';
+					if ($k < 6) {
+						$html_icons_pay .= '<img src="' . $pay_item['icon'] . '" class="bet-pay-icon" alt="' . $k . '">';
+					}
 				}
 			}
 
 			//get data Black 5
+		if (!empty($data_card['block_4']['0'])) {
 			$data_block_5 = $data_card['block_5'];
 			$text_btn_1 = $data_block_5['text_btn_bet_site'];
 			$url_btn_1 = $data_block_5['link_btn_bet_site'];
 			$text_btn_2 = $data_block_5['text_btn_single_post_page'];
 			$html_block_5 = <<<HTML
-<a href="{$url_btn_1}" class="btn btn-info">{$text_btn_1}</a>
-<a href="{$link}" class="btn btn-secondary">{$text_btn_2}</a>
+<a href="{$url_btn_1}" class="btn">{$text_btn_1}</a>
+<a href="{$link}" class="btn">{$text_btn_2}</a>
 HTML;
+		} else {
+			$text_btn_no_license = __('Saber Mais','betting');
+			$html_block_5 = <<<HTML
+<a href="#" class="btn">{$text_btn_no_license}</a>
+HTML;
+		}
+
 
 			?>
 			<div class="bet_card <?php echo $class_no_license ?>">
-				<div class="bet-img">
+				<div class="bet-img bl-0">
 					<img src="<?php echo $url_img_card; ?>" alt="<?php echo $title_card; ?>">
 					<?php echo $html_label; ?>
 				</div>
 				<div class="bet-part-card bl-1">
-					<h5 class="card-title" style="<?php echo $color_no_license ?>"><?php echo $title_card; ?><?php echo $after_title_icons_html; ?></h5>
+					<h5 class="card-title"><?php echo $title_card; ?><?php echo $after_title_icons_html; ?></h5>
 					<?php echo $html_rating; ?>
 					<?php
 					if (!empty($data_card['block_4']['0'])) {
-					?>
-					<input type="checkbox" id="comparar-<?php echo $post_id ?>" class="custom-checkbox" <?php echo $comparar; ?>><label
-							for="comparar-<?php echo $post_id ?>">COMPARAR</label>
+						?>
+						<input type="checkbox" id="comparar-<?php echo $post_id ?>"
+							   class="custom-checkbox" <?php echo $comparar; ?>><label
+								for="comparar-<?php echo $post_id ?>">COMPARAR</label>
 					<?php }
 					?>
 				</div>
@@ -180,10 +191,9 @@ HTML;
 				</div>
 				<div class="bet-part-card bl-3">
 					<div class="card-content">
-						<h4 class="card-text" style="<?php echo $color_no_license ?>"><?php _e('Métodos de pagamento', 'betting'); ?></h4>
+						<h4 class="card-text"><?php _e('Métodos de pagamento', 'betting'); ?></h4>
 						<?php echo $html_icons_pay; ?>
-						<span class="badge badge-dark"
-							  style="border-radius: 1px;"><?php echo $count_out_block_methods; ?></span>
+						<span class="badge badge-bet-count"><?php echo $count_out_block_methods; ?></span>
 					</div>
 				</div>
 				<div class="bet-img bl-4">

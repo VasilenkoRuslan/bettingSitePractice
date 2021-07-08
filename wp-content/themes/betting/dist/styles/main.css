@@ -32162,7 +32162,7 @@ a.thumbnail image {
 /* line 2, assets/styles/common/_global.scss */
 
 body {
-  max-width: 1600px;
+  max-width: 1440px;
   margin: 0 auto;
   background-color: #c4c4c4;
   background-repeat: no-repeat;
@@ -32172,12 +32172,7 @@ body {
 /* line 1, assets/styles/layouts/_header.scss */
 
 .header {
-  max-width: 1440px;
-  min-height: 64px;
-  margin: 0 auto;
-  position: relative;
-  top: 0;
-  left: auto;
+  max-height: 1531px;
   z-index: 15;
 }
 
@@ -32236,11 +32231,34 @@ body {
   }
 }
 
-/* line 22, assets/styles/layouts/_header.scss */
+/* line 17, assets/styles/layouts/_header.scss */
+
+.header .home {
+  background: linear-gradient(-4deg, transparent 71%, #f2f2f3 71%);
+}
+
+/* line 20, assets/styles/layouts/_header.scss */
+
+.header .home .background-image {
+  max-width: 1440px;
+  background-size: 100%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: auto;
+  height: 100%;
+  width: 100%;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 550px, 0 650px);
+          clip-path: polygon(0 0, 100% 0, 100% 550px, 0 650px);
+}
+
+/* line 34, assets/styles/layouts/_header.scss */
 
 .header .header__row {
   max-width: 100%;
   margin: 0 auto;
+  padding-top: 15px;
   padding-left: 11.8%;
   padding-right: 11.7%;
   display: -webkit-box;
@@ -32251,13 +32269,13 @@ body {
           justify-content: space-between;
 }
 
-/* line 30, assets/styles/layouts/_header.scss */
+/* line 43, assets/styles/layouts/_header.scss */
 
 .header .header__row a {
   color: #fff;
 }
 
-/* line 34, assets/styles/layouts/_header.scss */
+/* line 47, assets/styles/layouts/_header.scss */
 
 .header .header__row nav.header__nav {
   max-width: 100%;
@@ -32266,7 +32284,7 @@ body {
           flex: auto;
 }
 
-/* line 38, assets/styles/layouts/_header.scss */
+/* line 51, assets/styles/layouts/_header.scss */
 
 .header .header__row nav.header__nav ul.nav-primary__menu {
   -webkit-box-pack: end;
@@ -32274,7 +32292,7 @@ body {
           justify-content: flex-end;
 }
 
-/* line 41, assets/styles/layouts/_header.scss */
+/* line 54, assets/styles/layouts/_header.scss */
 
 .header .header__row nav.header__nav ul.nav-primary__menu li.menu-item a {
   color: #fff;
@@ -32288,7 +32306,7 @@ body {
   letter-spacing: -0.3px;
 }
 
-/* line 57, assets/styles/layouts/_header.scss */
+/* line 70, assets/styles/layouts/_header.scss */
 
 .menu-image.menu-image-title-after {
   padding: 0 !important;
@@ -32300,33 +32318,27 @@ body {
   max-width: 1164px;
   padding-left: 0;
   padding-right: 0;
-  position: relative;
-  top: -540px;
   z-index: 12;
 }
 
-/* line 10, assets/styles/layouts/_home_page.scss */
+/* line 8, assets/styles/layouts/_home_page.scss */
 
 #headerwrap {
-  position: relative;
-  top: -70px;
+  max-width: 1440px;
   width: 100%;
-  min-height: 800px;
-  background-size: 100%;
-  background-position: top center;
-  background-repeat: no-repeat;
-  z-index: 10;
+  margin: 0 auto;
 }
 
-/* line 20, assets/styles/layouts/_home_page.scss */
+/* line 13, assets/styles/layouts/_home_page.scss */
 
 #headerwrap .header_board {
   max-width: 1164px;
   padding-left: 0;
   padding-right: 0;
+  margin-bottom: 20px;
 }
 
-/* line 26, assets/styles/layouts/_home_page.scss */
+/* line 20, assets/styles/layouts/_home_page.scss */
 
 #headerwrap h1 {
   font-family: Roboto, serif;
@@ -32336,20 +32348,20 @@ body {
   letter-spacing: -0.01em;
   line-height: 70px;
   color: #fff;
-  padding: 106.75px 0;
+  padding: 106.75px 0 0;
 }
 
-/* line 36, assets/styles/layouts/_home_page.scss */
+/* line 30, assets/styles/layouts/_home_page.scss */
 
 #headerwrap h1 span {
   color: #17c37b;
 }
 
-/* line 41, assets/styles/layouts/_home_page.scss */
+/* line 35, assets/styles/layouts/_home_page.scss */
 
 #headerwrap p {
   color: #fff;
-  padding: 133.9px 0;
+  padding: 133.9px 0 0;
   font-size: 18px;
   font-family: Roboto, sans-serif;
   font-style: normal;
@@ -32358,7 +32370,7 @@ body {
   letter-spacing: -0.01em;
 }
 
-/* line 54, assets/styles/layouts/_home_page.scss */
+/* line 48, assets/styles/layouts/_home_page.scss */
 
 .bet_card {
   width: 1164px;
@@ -32375,43 +32387,46 @@ body {
   margin-bottom: 8px;
 }
 
-/* line 65, assets/styles/layouts/_home_page.scss */
+/* line 59, assets/styles/layouts/_home_page.scss */
 
 .bet_card:hover {
   border: #f3c140 solid 3px;
 }
 
-/* line 69, assets/styles/layouts/_home_page.scss */
-
-.bet_card.no_license:hover {
-  border: 3px solid transparent;
-}
-
-/* line 73, assets/styles/layouts/_home_page.scss */
+/* line 63, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bet-img {
   width: 168px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-/* line 77, assets/styles/layouts/_home_page.scss */
+/* line 70, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bl-1 {
   width: 204px;
 }
 
-/* line 81, assets/styles/layouts/_home_page.scss */
+/* line 74, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bl-2 {
   width: 250px;
 }
 
-/* line 85, assets/styles/layouts/_home_page.scss */
+/* line 78, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bl-3 {
   width: 212px;
 }
 
-/* line 88, assets/styles/layouts/_home_page.scss */
+/* line 81, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bl-3 img {
   width: auto !important;
@@ -32419,7 +32434,7 @@ body {
   margin-right: 12px;
 }
 
-/* line 95, assets/styles/layouts/_home_page.scss */
+/* line 88, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bl-4 {
   width: 156px;
@@ -32431,7 +32446,7 @@ body {
           align-items: center;
 }
 
-/* line 100, assets/styles/layouts/_home_page.scss */
+/* line 93, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bl-4 img {
   width: auto !important;
@@ -32439,13 +32454,13 @@ body {
   margin-left: 38.71px;
 }
 
-/* line 107, assets/styles/layouts/_home_page.scss */
+/* line 100, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bl-5 {
   width: 168px;
 }
 
-/* line 112, assets/styles/layouts/_home_page.scss */
+/* line 105, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bet-img,
 .bet_card .bet-part-card {
@@ -32454,17 +32469,17 @@ body {
   position: static;
 }
 
-/* line 118, assets/styles/layouts/_home_page.scss */
+/* line 111, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bet-img img,
 .bet_card .bet-part-card img {
   padding: 0;
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
   max-height: 100%;
 }
 
-/* line 125, assets/styles/layouts/_home_page.scss */
+/* line 118, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bet-img .bet-badge,
 .bet_card .bet-part-card .bet-badge {
@@ -32474,14 +32489,13 @@ body {
   z-index: 1;
 }
 
-/* line 131, assets/styles/layouts/_home_page.scss */
+/* line 124, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bet-img .bet-badge .top-casino,
 .bet_card .bet-part-card .bet-badge .top-casino {
   min-width: 2.1em;
   padding: 2px 8px;
   text-align: center;
-  background: #f3c140;
   color: #8c4f07;
   font-style: normal;
   font-weight: 700;
@@ -32493,7 +32507,7 @@ body {
   display: block;
 }
 
-/* line 149, assets/styles/layouts/_home_page.scss */
+/* line 141, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bet-img .card-title,
 .bet_card .bet-part-card .card-title {
@@ -32508,7 +32522,7 @@ body {
   margin: 0;
 }
 
-/* line 160, assets/styles/layouts/_home_page.scss */
+/* line 152, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bet-img .card-title img,
 .bet_card .bet-part-card .card-title img {
@@ -32517,7 +32531,7 @@ body {
   height: 16px;
 }
 
-/* line 168, assets/styles/layouts/_home_page.scss */
+/* line 160, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bet-img .bet_rating,
 .bet_card .bet-part-card .bet_rating {
@@ -32525,7 +32539,7 @@ body {
   padding-left: 20px;
 }
 
-/* line 172, assets/styles/layouts/_home_page.scss */
+/* line 164, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bet-img .bet_rating .rating-item,
 .bet_card .bet-part-card .bet_rating .rating-item {
@@ -32533,14 +32547,14 @@ body {
   padding-right: 8px;
 }
 
-/* line 176, assets/styles/layouts/_home_page.scss */
+/* line 168, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bet-img .bet_rating .rating-item.active,
 .bet_card .bet-part-card .bet_rating .rating-item.active {
   color: #ffc700;
 }
 
-/* line 183, assets/styles/layouts/_home_page.scss */
+/* line 175, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bet-img .card-content,
 .bet_card .bet-part-card .card-content {
@@ -32548,7 +32562,7 @@ body {
   padding: 31px 0 31px 20px;
 }
 
-/* line 187, assets/styles/layouts/_home_page.scss */
+/* line 179, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bet-img .card-content .card-text,
 .bet_card .bet-part-card .card-content .card-text {
@@ -32560,7 +32574,7 @@ body {
   color: #1d2129;
 }
 
-/* line 195, assets/styles/layouts/_home_page.scss */
+/* line 187, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bet-img .card-content .card-text img,
 .bet_card .bet-part-card .card-content .card-text img {
@@ -32569,14 +32583,26 @@ body {
   height: 16px;
 }
 
-/* line 204, assets/styles/layouts/_home_page.scss */
+/* line 194, assets/styles/layouts/_home_page.scss */
+
+.bet_card .bet-img .card-content .badge-bet-count,
+.bet_card .bet-part-card .card-content .badge-bet-count {
+  height: 20px;
+  width: 37px;
+  border-radius: 10px;
+  background: #f2f2f3;
+  color: #000;
+  margin-left: -6px;
+}
+
+/* line 205, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bet-img .card-btn-content,
 .bet_card .bet-part-card .card-btn-content {
   margin: 20px 24px;
 }
 
-/* line 207, assets/styles/layouts/_home_page.scss */
+/* line 208, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bet-img .card-btn-content .btn,
 .bet_card .bet-part-card .card-btn-content .btn {
@@ -32606,7 +32632,7 @@ body {
   letter-spacing: -1px;
 }
 
-/* line 228, assets/styles/layouts/_home_page.scss */
+/* line 229, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bet-img .card-btn-content .btn:first-child,
 .bet_card .bet-part-card .card-btn-content .btn:first-child {
@@ -32614,7 +32640,7 @@ body {
   color: #fff;
 }
 
-/* line 235, assets/styles/layouts/_home_page.scss */
+/* line 236, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bet-img .custom-checkbox,
 .bet_card .bet-part-card .custom-checkbox {
@@ -32624,7 +32650,7 @@ body {
   padding-left: 20px;
 }
 
-/* line 242, assets/styles/layouts/_home_page.scss */
+/* line 243, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bet-img .custom-checkbox + label,
 .bet_card .bet-part-card .custom-checkbox + label {
@@ -32647,14 +32673,14 @@ body {
   margin-top: 12px;
 }
 
-/* line 255, assets/styles/layouts/_home_page.scss */
+/* line 256, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bet-img .custom-checkbox:checked + label,
 .bet_card .bet-part-card .custom-checkbox:checked + label {
   color: #1cc37b;
 }
 
-/* line 259, assets/styles/layouts/_home_page.scss */
+/* line 260, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bet-img .custom-checkbox + label::before,
 .bet_card .bet-part-card .custom-checkbox + label::before {
@@ -32675,7 +32701,7 @@ body {
   background-size: 50% 50%;
 }
 
-/* line 274, assets/styles/layouts/_home_page.scss */
+/* line 275, assets/styles/layouts/_home_page.scss */
 
 .bet_card .bet-img .custom-checkbox:checked + label::before,
 .bet_card .bet-part-card .custom-checkbox:checked + label::before {
@@ -32684,13 +32710,13 @@ body {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
 }
 
-/* line 283, assets/styles/layouts/_home_page.scss */
+/* line 284, assets/styles/layouts/_home_page.scss */
 
 .before-bet {
   margin-bottom: 34px;
 }
 
-/* line 286, assets/styles/layouts/_home_page.scss */
+/* line 287, assets/styles/layouts/_home_page.scss */
 
 .before-bet .before-bet-left {
   display: -webkit-box;
@@ -32698,7 +32724,7 @@ body {
   display: flex;
 }
 
-/* line 289, assets/styles/layouts/_home_page.scss */
+/* line 290, assets/styles/layouts/_home_page.scss */
 
 .before-bet .before-bet-left .img-before-bet {
   width: auto;
@@ -32706,7 +32732,7 @@ body {
   margin-right: 5px;
 }
 
-/* line 295, assets/styles/layouts/_home_page.scss */
+/* line 296, assets/styles/layouts/_home_page.scss */
 
 .before-bet .before-bet-left .before-bet-l-text {
   font-family: 'Roboto', sans-serif;
@@ -32721,7 +32747,7 @@ body {
   margin: 0;
 }
 
-/* line 309, assets/styles/layouts/_home_page.scss */
+/* line 310, assets/styles/layouts/_home_page.scss */
 
 .before-bet .before-bet-right {
   display: -webkit-box;
@@ -32730,26 +32756,29 @@ body {
   font-size: 14px;
 }
 
-/* line 313, assets/styles/layouts/_home_page.scss */
+/* line 314, assets/styles/layouts/_home_page.scss */
 
-.before-bet .before-bet-right div {
+.before-bet .before-bet-right div,
+.before-bet .before-bet-right a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-/* line 316, assets/styles/layouts/_home_page.scss */
+/* line 318, assets/styles/layouts/_home_page.scss */
 
-.before-bet .before-bet-right div .img-before-bet-r {
+.before-bet .before-bet-right div .img-before-bet-r,
+.before-bet .before-bet-right a .img-before-bet-r {
   width: 24px;
   height: 24px;
   margin-right: 4px;
   margin-left: 19px;
 }
 
-/* line 323, assets/styles/layouts/_home_page.scss */
+/* line 325, assets/styles/layouts/_home_page.scss */
 
-.before-bet .before-bet-right div .before-bet-r-text {
+.before-bet .before-bet-right div .before-bet-r-text,
+.before-bet .before-bet-right a .before-bet-r-text {
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
@@ -32758,6 +32787,65 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
   letter-spacing: -0.01em;
   color: #fff;
+  margin: 0;
+}
+
+/* line 342, assets/styles/layouts/_home_page.scss */
+
+.bet_card.no_license:hover {
+  border: 3px solid transparent;
+}
+
+/* line 346, assets/styles/layouts/_home_page.scss */
+
+.bet_card.no_license .bet-img.bl-0 {
+  background: #bebec7;
+}
+
+/* line 350, assets/styles/layouts/_home_page.scss */
+
+.bet_card.no_license .card-title {
+  color: #bebec7;
+}
+
+/* line 355, assets/styles/layouts/_home_page.scss */
+
+.bet_card.no_license .card-content .card-text {
+  color: #bebec7;
+}
+
+/* line 362, assets/styles/layouts/_home_page.scss */
+
+.bet_card.no_license .bet-part-card.bl-3 .card-content .bet-pay-icon {
+  border-radius: 10px;
+  background: #bebec7;
+}
+
+/* line 369, assets/styles/layouts/_home_page.scss */
+
+.bet_card.no_license .bet-part-card.bl-5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 374, assets/styles/layouts/_home_page.scss */
+
+.bet_card.no_license .bet-part-card.bl-5 .card-btn-content .btn:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #f2f2f3;
+  color: #1d2129;
   margin: 0;
 }
 

@@ -8,7 +8,7 @@
  * @package betting
  */
 ?>
-<?php $link_bg_img = get_field('home_bg_img','options');
+<?php $link_bg_img = get_field('home_bg_img', 'options');
 $link_bg_img = (!empty($link_bg_img)) ? $link_bg_img : null;
 ?>
 <!DOCTYPE html>
@@ -21,18 +21,22 @@ $link_bg_img = (!empty($link_bg_img)) ? $link_bg_img : null;
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class();
-if (is_front_page() && $link_bg_img !== null) { ?> style="background-image: url('<?php echo $link_bg_img; ?>');"<?php } ?>>
+<body <?php body_class(); ?> >
 <?php wp_body_open(); ?>
 <header class="header">
+	<div class="home">
+		<div class="background-image"
+				<?php if (is_front_page() && $link_bg_img !== null) { ?> style="background-image: url('<?php echo $link_bg_img; ?>');"<?php } ?>>
+		</div>
+	</div>
 	<div class="header__row">
 
-		<a class="header__brand brand" href="<?php echo esc_url( home_url() ); ?>">
-			<?php if ( get_header_image() ) : ?>
-				<img class="brand__img" src="<?php echo( get_header_image() ); ?>" alt="<?php bloginfo( 'name' ); ?>"/>
+		<a class="header__brand brand" href="<?php echo esc_url(home_url()); ?>">
+			<?php if (get_header_image()) : ?>
+				<img class="brand__img" src="<?php echo(get_header_image()); ?>" alt="<?php bloginfo('name'); ?>"/>
 			<?php
 			else :
-				bloginfo( 'name' );
+				bloginfo('name');
 			endif;
 			?>
 		</a><!-- /.brand -->
@@ -45,14 +49,14 @@ if (is_front_page() && $link_bg_img !== null) { ?> style="background-image: url(
 			</div><!-- /.nav-primary__toggle -->
 
 			<?php
-			if ( has_nav_menu( 'primary' ) ) :
+			if (has_nav_menu('primary')) :
 				wp_nav_menu(
 						[
-								'theme_location'  => 'primary',
-								'menu_id'         => 'primary-menu',
-								'menu_class'      => 'nav-primary__menu menu',
-								'items_wrap'      => '<ul id="%1$s" class="%2$s" data-responsive-menu="drilldown large-dropdown" data-parent-link="true">%3$s</ul>',
-								'walker'          => new betting_Navwalker(),
+								'theme_location' => 'primary',
+								'menu_id' => 'primary-menu',
+								'menu_class' => 'nav-primary__menu menu',
+								'items_wrap' => '<ul id="%1$s" class="%2$s" data-responsive-menu="drilldown large-dropdown" data-parent-link="true">%3$s</ul>',
+								'walker' => new betting_Navwalker(),
 						]
 				);
 			endif;

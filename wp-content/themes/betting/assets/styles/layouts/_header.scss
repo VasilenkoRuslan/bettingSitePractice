@@ -11,17 +11,30 @@
     @include flex-grid-column(9);
   }
 
-  max-width: 1440px;
-  min-height: 64px;
-  margin: 0 auto;
-  position: relative;
-  top: 0;
-  left: auto;
+  max-height: 1531px;
   z-index: 15;
+
+  .home {
+    background: linear-gradient(-4deg, transparent 71%, #f2f2f3 71%);
+
+    .background-image {
+      max-width: 1440px;
+      background-size: 100%;
+      background-position: top center;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 0;
+      left: auto;
+      height: 100%;
+      width: 100%;
+      clip-path: polygon(0 0, 100% 0, 100% 550px, 0 650px);
+    }
+  }
 
   .header__row {
     max-width: 100%;
     margin: 0 auto;
+    padding-top: 15px;
     padding-left: 11.8%;
     padding-right: 11.7%;
     display: flex;
