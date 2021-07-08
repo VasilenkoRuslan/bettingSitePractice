@@ -7,5 +7,10 @@ $home_page = new ThemeHome();
 
 <?php get_template_part( 'template-parts/content-archive', 'betpage' ); ?>
 
+<?php while ( have_posts() ) : the_post();
+	the_content();
+endwhile;
+?>
+
 <?php get_footer(); ?>
 

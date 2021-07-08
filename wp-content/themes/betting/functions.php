@@ -107,15 +107,6 @@ add_filter( 'rest_authentication_errors', 'rest_authentication_require' );
 // Disable the theme / plugin text editor in Admin
 define( 'DISALLOW_FILE_EDIT', true );
 
-// add class to function wp_nav_menu()
-function add_additional_class_on_li($classes, $item, $args) {
-	if(isset($args->add_li_class)) {
-		$classes[] = $args->add_li_class;
-	}
-	return $classes;
-}
-add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
-
 function my_acf_op_init() {
 
 	// Check function exists.
@@ -131,5 +122,27 @@ function my_acf_op_init() {
 		));
 	}
 }
-
 add_action('acf/init', 'my_acf_op_init');
+
+
+function my_acf_init_block_types()
+{
+	// Check function exists.
+	if (function_exists('acf_register_block_type')) {
+
+		// register a testimonial block.
+		acf_register_block_type(array(
+			'name' => 'information',
+			'title' => __('information'),
+			'description' => __('????'),
+			'render_template' => 'template-parts/block/information/block.php',
+			'category' => 'formatting',
+			'icon' => 'editor-past-text',
+			'keywords' => array('information', 'quote'),
+		));
+	}
+}
+
+add_action('acf/init', 'my_acf_init_block_types');
+
+
