@@ -1,0 +1,68 @@
+.custom-gallery {
+  background: #f2f2f3;
+  position: relative;
+  top: -200px;
+  overflow: hidden;
+
+  .block-gallery {
+    padding: 120px 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #1d2129;
+
+    .title-gallery {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 48px;
+      line-height: 52px;
+      letter-spacing: -0.01em;
+      margin-bottom: 60px;
+    }
+
+    .multiple-items {
+      .slick-prev::before,
+      .slick-next::before {
+        color: #1d2129;
+      }
+
+      .slider-item {
+        width: 368px;
+        padding-right: 30px;
+
+        .img-gallery {
+          width: 368px;
+          height: 192px;
+        }
+
+        .date {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 16px;
+          text-transform: uppercase;
+          color: #5d6066;
+          margin: 16px 0 10px;
+        }
+
+        .title {
+          font-family: 'Roboto', sans-serif;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 24px;
+          letter-spacing: -0.01em;
+          margin-bottom: 12px;
+        }
+
+        .btn-item-gallery {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 19px;
+          text-transform: uppercase;
+          color: #5d6066;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

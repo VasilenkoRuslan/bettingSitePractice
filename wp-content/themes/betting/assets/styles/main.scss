@@ -3,9 +3,15 @@
 /** Import everything from autoload */
 @import "./autoload/**/*";
 @import "common/global";
+@import "components/information";
+@import "components/custom-gallery";
 @import "layouts/header";
 @import "layouts/footer";
 @import "layouts/home_page";
+@import "~font-awesome/scss/font-awesome";
+// Import Slick
+@import "~slick-carousel/slick/slick.scss";
+@import "~slick-carousel/slick/slick-theme.scss";
 
 /**
  * Import npm dependencies

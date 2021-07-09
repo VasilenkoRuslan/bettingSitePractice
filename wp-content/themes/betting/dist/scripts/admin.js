@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/wp-content/themes/betting/dist/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 47);
+/******/ 	return __webpack_require__(__webpack_require__.s = 48);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -72,16 +72,16 @@ module.exports = jQuery;
 
 /***/ }),
 
-/***/ 47:
+/***/ 48:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(48);
-module.exports = __webpack_require__(49);
+__webpack_require__(49);
+module.exports = __webpack_require__(50);
 
 
 /***/ }),
 
-/***/ 48:
+/***/ 49:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(jQuery) {jQuery(document).ready(function () {});
@@ -89,7 +89,7 @@ module.exports = __webpack_require__(49);
 
 /***/ }),
 
-/***/ 49:
+/***/ 50:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

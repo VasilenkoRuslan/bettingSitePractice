@@ -140,6 +140,16 @@ function my_acf_init_block_types()
 			'icon' => 'editor-past-text',
 			'keywords' => array('information', 'quote'),
 		));
+
+		acf_register_block_type(array(
+			'name' => 'custom_gallery',
+			'title' => __('Custom gallery'),
+			'description' => __('about custom gallery'),
+			'render_template' => 'template-parts/block/custom-gallery/block.php',
+			'category' => 'common',
+			'icon' => 'format-image',
+			'keywords' => array('custom_gallery', 'quote'),
+		));
 	}
 }
 
